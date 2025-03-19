@@ -1,0 +1,966 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F3B78A772D8A517A002CB6E8 /* Pomodoro Minimalista Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F3B78A762D8A517A002CB6E8 /* Pomodoro Minimalista Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F3B78A612D8A517A002CB6E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3B78A482D8A5179002CB6E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3B78A4F2D8A5179002CB6E8;
+			remoteInfo = "Pomodoro Minimalista";
+		};
+		F3B78A6B2D8A517A002CB6E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3B78A482D8A5179002CB6E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3B78A4F2D8A5179002CB6E8;
+			remoteInfo = "Pomodoro Minimalista";
+		};
+		F3B78A782D8A517A002CB6E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3B78A482D8A5179002CB6E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3B78A752D8A517A002CB6E8;
+			remoteInfo = "Pomodoro Minimalista Watch App";
+		};
+		F3B78A892D8A517B002CB6E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3B78A482D8A5179002CB6E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3B78A752D8A517A002CB6E8;
+			remoteInfo = "Pomodoro Minimalista Watch App";
+		};
+		F3B78A932D8A517B002CB6E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3B78A482D8A5179002CB6E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3B78A752D8A517A002CB6E8;
+			remoteInfo = "Pomodoro Minimalista Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F3B78A9F2D8A517B002CB6E8 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F3B78A772D8A517A002CB6E8 /* Pomodoro Minimalista Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F3B78A502D8A5179002CB6E8 /* Pomodoro Minimalista.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pomodoro Minimalista.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3B78A602D8A517A002CB6E8 /* Pomodoro MinimalistaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pomodoro MinimalistaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3B78A6A2D8A517A002CB6E8 /* Pomodoro MinimalistaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pomodoro MinimalistaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3B78A762D8A517A002CB6E8 /* Pomodoro Minimalista Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pomodoro Minimalista Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3B78A882D8A517B002CB6E8 /* Pomodoro Minimalista Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pomodoro Minimalista Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3B78A922D8A517B002CB6E8 /* Pomodoro Minimalista Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pomodoro Minimalista Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F3B78A522D8A5179002CB6E8 /* Pomodoro Minimalista */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Pomodoro Minimalista";
+			sourceTree = "<group>";
+		};
+		F3B78A632D8A517A002CB6E8 /* Pomodoro MinimalistaTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Pomodoro MinimalistaTests";
+			sourceTree = "<group>";
+		};
+		F3B78A6D2D8A517A002CB6E8 /* Pomodoro MinimalistaUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Pomodoro MinimalistaUITests";
+			sourceTree = "<group>";
+		};
+		F3B78A7A2D8A517A002CB6E8 /* Pomodoro Minimalista Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Pomodoro Minimalista Watch App";
+			sourceTree = "<group>";
+		};
+		F3B78A8B2D8A517B002CB6E8 /* Pomodoro Minimalista Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Pomodoro Minimalista Watch AppTests";
+			sourceTree = "<group>";
+		};
+		F3B78A952D8A517B002CB6E8 /* Pomodoro Minimalista Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Pomodoro Minimalista Watch AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F3B78A4D2D8A5179002CB6E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3B78A5D2D8A517A002CB6E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3B78A672D8A517A002CB6E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3B78A732D8A517A002CB6E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3B78A852D8A517B002CB6E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3B78A8F2D8A517B002CB6E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F3B78A472D8A5179002CB6E8 = {
+			isa = PBXGroup;
+			children = (
+				F3B78A522D8A5179002CB6E8 /* Pomodoro Minimalista */,
+				F3B78A632D8A517A002CB6E8 /* Pomodoro MinimalistaTests */,
+				F3B78A6D2D8A517A002CB6E8 /* Pomodoro MinimalistaUITests */,
+				F3B78A7A2D8A517A002CB6E8 /* Pomodoro Minimalista Watch App */,
+				F3B78A8B2D8A517B002CB6E8 /* Pomodoro Minimalista Watch AppTests */,
+				F3B78A952D8A517B002CB6E8 /* Pomodoro Minimalista Watch AppUITests */,
+				F3B78A512D8A5179002CB6E8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F3B78A512D8A5179002CB6E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3B78A502D8A5179002CB6E8 /* Pomodoro Minimalista.app */,
+				F3B78A602D8A517A002CB6E8 /* Pomodoro MinimalistaTests.xctest */,
+				F3B78A6A2D8A517A002CB6E8 /* Pomodoro MinimalistaUITests.xctest */,
+				F3B78A762D8A517A002CB6E8 /* Pomodoro Minimalista Watch App.app */,
+				F3B78A882D8A517B002CB6E8 /* Pomodoro Minimalista Watch AppTests.xctest */,
+				F3B78A922D8A517B002CB6E8 /* Pomodoro Minimalista Watch AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F3B78A4F2D8A5179002CB6E8 /* Pomodoro Minimalista */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3B78AA02D8A517B002CB6E8 /* Build configuration list for PBXNativeTarget "Pomodoro Minimalista" */;
+			buildPhases = (
+				F3B78A4C2D8A5179002CB6E8 /* Sources */,
+				F3B78A4D2D8A5179002CB6E8 /* Frameworks */,
+				F3B78A4E2D8A5179002CB6E8 /* Resources */,
+				F3B78A9F2D8A517B002CB6E8 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3B78A792D8A517A002CB6E8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F3B78A522D8A5179002CB6E8 /* Pomodoro Minimalista */,
+			);
+			name = "Pomodoro Minimalista";
+			packageProductDependencies = (
+			);
+			productName = "Pomodoro Minimalista";
+			productReference = F3B78A502D8A5179002CB6E8 /* Pomodoro Minimalista.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F3B78A5F2D8A517A002CB6E8 /* Pomodoro MinimalistaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3B78AA32D8A517B002CB6E8 /* Build configuration list for PBXNativeTarget "Pomodoro MinimalistaTests" */;
+			buildPhases = (
+				F3B78A5C2D8A517A002CB6E8 /* Sources */,
+				F3B78A5D2D8A517A002CB6E8 /* Frameworks */,
+				F3B78A5E2D8A517A002CB6E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3B78A622D8A517A002CB6E8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F3B78A632D8A517A002CB6E8 /* Pomodoro MinimalistaTests */,
+			);
+			name = "Pomodoro MinimalistaTests";
+			packageProductDependencies = (
+			);
+			productName = "Pomodoro MinimalistaTests";
+			productReference = F3B78A602D8A517A002CB6E8 /* Pomodoro MinimalistaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F3B78A692D8A517A002CB6E8 /* Pomodoro MinimalistaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3B78AA62D8A517B002CB6E8 /* Build configuration list for PBXNativeTarget "Pomodoro MinimalistaUITests" */;
+			buildPhases = (
+				F3B78A662D8A517A002CB6E8 /* Sources */,
+				F3B78A672D8A517A002CB6E8 /* Frameworks */,
+				F3B78A682D8A517A002CB6E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3B78A6C2D8A517A002CB6E8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F3B78A6D2D8A517A002CB6E8 /* Pomodoro MinimalistaUITests */,
+			);
+			name = "Pomodoro MinimalistaUITests";
+			packageProductDependencies = (
+			);
+			productName = "Pomodoro MinimalistaUITests";
+			productReference = F3B78A6A2D8A517A002CB6E8 /* Pomodoro MinimalistaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		F3B78A752D8A517A002CB6E8 /* Pomodoro Minimalista Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3B78A9C2D8A517B002CB6E8 /* Build configuration list for PBXNativeTarget "Pomodoro Minimalista Watch App" */;
+			buildPhases = (
+				F3B78A722D8A517A002CB6E8 /* Sources */,
+				F3B78A732D8A517A002CB6E8 /* Frameworks */,
+				F3B78A742D8A517A002CB6E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				F3B78A7A2D8A517A002CB6E8 /* Pomodoro Minimalista Watch App */,
+			);
+			name = "Pomodoro Minimalista Watch App";
+			packageProductDependencies = (
+			);
+			productName = "Pomodoro Minimalista Watch App";
+			productReference = F3B78A762D8A517A002CB6E8 /* Pomodoro Minimalista Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F3B78A872D8A517B002CB6E8 /* Pomodoro Minimalista Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3B78AA92D8A517B002CB6E8 /* Build configuration list for PBXNativeTarget "Pomodoro Minimalista Watch AppTests" */;
+			buildPhases = (
+				F3B78A842D8A517B002CB6E8 /* Sources */,
+				F3B78A852D8A517B002CB6E8 /* Frameworks */,
+				F3B78A862D8A517B002CB6E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3B78A8A2D8A517B002CB6E8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F3B78A8B2D8A517B002CB6E8 /* Pomodoro Minimalista Watch AppTests */,
+			);
+			name = "Pomodoro Minimalista Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "Pomodoro Minimalista Watch AppTests";
+			productReference = F3B78A882D8A517B002CB6E8 /* Pomodoro Minimalista Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F3B78A912D8A517B002CB6E8 /* Pomodoro Minimalista Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3B78AAC2D8A517B002CB6E8 /* Build configuration list for PBXNativeTarget "Pomodoro Minimalista Watch AppUITests" */;
+			buildPhases = (
+				F3B78A8E2D8A517B002CB6E8 /* Sources */,
+				F3B78A8F2D8A517B002CB6E8 /* Frameworks */,
+				F3B78A902D8A517B002CB6E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3B78A942D8A517B002CB6E8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F3B78A952D8A517B002CB6E8 /* Pomodoro Minimalista Watch AppUITests */,
+			);
+			name = "Pomodoro Minimalista Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "Pomodoro Minimalista Watch AppUITests";
+			productReference = F3B78A922D8A517B002CB6E8 /* Pomodoro Minimalista Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F3B78A482D8A5179002CB6E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					F3B78A4F2D8A5179002CB6E8 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					F3B78A5F2D8A517A002CB6E8 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = F3B78A4F2D8A5179002CB6E8;
+					};
+					F3B78A692D8A517A002CB6E8 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = F3B78A4F2D8A5179002CB6E8;
+					};
+					F3B78A752D8A517A002CB6E8 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					F3B78A872D8A517B002CB6E8 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = F3B78A752D8A517A002CB6E8;
+					};
+					F3B78A912D8A517B002CB6E8 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = F3B78A752D8A517A002CB6E8;
+					};
+				};
+			};
+			buildConfigurationList = F3B78A4B2D8A5179002CB6E8 /* Build configuration list for PBXProject "Pomodoro Minimalista" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F3B78A472D8A5179002CB6E8;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = F3B78A512D8A5179002CB6E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F3B78A4F2D8A5179002CB6E8 /* Pomodoro Minimalista */,
+				F3B78A5F2D8A517A002CB6E8 /* Pomodoro MinimalistaTests */,
+				F3B78A692D8A517A002CB6E8 /* Pomodoro MinimalistaUITests */,
+				F3B78A752D8A517A002CB6E8 /* Pomodoro Minimalista Watch App */,
+				F3B78A872D8A517B002CB6E8 /* Pomodoro Minimalista Watch AppTests */,
+				F3B78A912D8A517B002CB6E8 /* Pomodoro Minimalista Watch AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F3B78A4E2D8A5179002CB6E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3B78A5E2D8A517A002CB6E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3B78A682D8A517A002CB6E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3B78A742D8A517A002CB6E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3B78A862D8A517B002CB6E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3B78A902D8A517B002CB6E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F3B78A4C2D8A5179002CB6E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3B78A5C2D8A517A002CB6E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3B78A662D8A517A002CB6E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3B78A722D8A517A002CB6E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3B78A842D8A517B002CB6E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3B78A8E2D8A517B002CB6E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F3B78A622D8A517A002CB6E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3B78A4F2D8A5179002CB6E8 /* Pomodoro Minimalista */;
+			targetProxy = F3B78A612D8A517A002CB6E8 /* PBXContainerItemProxy */;
+		};
+		F3B78A6C2D8A517A002CB6E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3B78A4F2D8A5179002CB6E8 /* Pomodoro Minimalista */;
+			targetProxy = F3B78A6B2D8A517A002CB6E8 /* PBXContainerItemProxy */;
+		};
+		F3B78A792D8A517A002CB6E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3B78A752D8A517A002CB6E8 /* Pomodoro Minimalista Watch App */;
+			targetProxy = F3B78A782D8A517A002CB6E8 /* PBXContainerItemProxy */;
+		};
+		F3B78A8A2D8A517B002CB6E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3B78A752D8A517A002CB6E8 /* Pomodoro Minimalista Watch App */;
+			targetProxy = F3B78A892D8A517B002CB6E8 /* PBXContainerItemProxy */;
+		};
+		F3B78A942D8A517B002CB6E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3B78A752D8A517A002CB6E8 /* Pomodoro Minimalista Watch App */;
+			targetProxy = F3B78A932D8A517B002CB6E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F3B78A9A2D8A517B002CB6E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F3B78A9B2D8A517B002CB6E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		F3B78A9D2D8A517B002CB6E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Pomodoro Minimalista Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 7B5J3Q4N7K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Pomodoro Minimalista";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "Margo.Pomodoro-Minimalista";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Margo.Pomodoro-Minimalista.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		F3B78A9E2D8A517B002CB6E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Pomodoro Minimalista Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 7B5J3Q4N7K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Pomodoro Minimalista";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "Margo.Pomodoro-Minimalista";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Margo.Pomodoro-Minimalista.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+		F3B78AA12D8A517B002CB6E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Pomodoro Minimalista/Preview Content\"";
+				DEVELOPMENT_TEAM = 7B5J3Q4N7K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Pomodoro Minimalista";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Margo.Pomodoro-Minimalista";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F3B78AA22D8A517B002CB6E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Pomodoro Minimalista/Preview Content\"";
+				DEVELOPMENT_TEAM = 7B5J3Q4N7K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Pomodoro Minimalista";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Margo.Pomodoro-Minimalista";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F3B78AA42D8A517B002CB6E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7B5J3Q4N7K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Margo.Pomodoro-MinimalistaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pomodoro Minimalista.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pomodoro Minimalista";
+			};
+			name = Debug;
+		};
+		F3B78AA52D8A517B002CB6E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7B5J3Q4N7K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Margo.Pomodoro-MinimalistaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pomodoro Minimalista.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pomodoro Minimalista";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F3B78AA72D8A517B002CB6E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7B5J3Q4N7K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Margo.Pomodoro-MinimalistaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Pomodoro Minimalista";
+			};
+			name = Debug;
+		};
+		F3B78AA82D8A517B002CB6E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7B5J3Q4N7K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Margo.Pomodoro-MinimalistaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Pomodoro Minimalista";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F3B78AAA2D8A517B002CB6E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7B5J3Q4N7K;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Margo.Pomodoro-Minimalista-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pomodoro Minimalista Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pomodoro Minimalista Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		F3B78AAB2D8A517B002CB6E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7B5J3Q4N7K;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Margo.Pomodoro-Minimalista-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pomodoro Minimalista Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pomodoro Minimalista Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+		F3B78AAD2D8A517B002CB6E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7B5J3Q4N7K;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Margo.Pomodoro-Minimalista-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Pomodoro Minimalista Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		F3B78AAE2D8A517B002CB6E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7B5J3Q4N7K;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Margo.Pomodoro-Minimalista-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Pomodoro Minimalista Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F3B78A4B2D8A5179002CB6E8 /* Build configuration list for PBXProject "Pomodoro Minimalista" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3B78A9A2D8A517B002CB6E8 /* Debug */,
+				F3B78A9B2D8A517B002CB6E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3B78A9C2D8A517B002CB6E8 /* Build configuration list for PBXNativeTarget "Pomodoro Minimalista Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3B78A9D2D8A517B002CB6E8 /* Debug */,
+				F3B78A9E2D8A517B002CB6E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3B78AA02D8A517B002CB6E8 /* Build configuration list for PBXNativeTarget "Pomodoro Minimalista" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3B78AA12D8A517B002CB6E8 /* Debug */,
+				F3B78AA22D8A517B002CB6E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3B78AA32D8A517B002CB6E8 /* Build configuration list for PBXNativeTarget "Pomodoro MinimalistaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3B78AA42D8A517B002CB6E8 /* Debug */,
+				F3B78AA52D8A517B002CB6E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3B78AA62D8A517B002CB6E8 /* Build configuration list for PBXNativeTarget "Pomodoro MinimalistaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3B78AA72D8A517B002CB6E8 /* Debug */,
+				F3B78AA82D8A517B002CB6E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3B78AA92D8A517B002CB6E8 /* Build configuration list for PBXNativeTarget "Pomodoro Minimalista Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3B78AAA2D8A517B002CB6E8 /* Debug */,
+				F3B78AAB2D8A517B002CB6E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3B78AAC2D8A517B002CB6E8 /* Build configuration list for PBXNativeTarget "Pomodoro Minimalista Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3B78AAD2D8A517B002CB6E8 /* Debug */,
+				F3B78AAE2D8A517B002CB6E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F3B78A482D8A5179002CB6E8 /* Project object */;
+}
