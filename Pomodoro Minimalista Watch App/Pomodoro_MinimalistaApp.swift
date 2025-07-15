@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct Pomodoro_Minimalista_Watch_AppApp: App {
+    @StateObject var timerController: TimerController = TimerController()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(timerController: timerController)
         }
     }
 }
