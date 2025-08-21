@@ -12,11 +12,52 @@ import SwiftUI
 class TimerController: ObservableObject {
     @Published var currentDateTime = Date()
     @Published var isRunning: Bool = false
-    
-    private var startDate: Date?
+    @Published var progress: CGFloat = 0.0
 
+    private var startDate: Date?
     private var timer: Timer?
-    var timerInterval: TimeInterval = 1
-    
-    let duration: TimeInterval = 25 * 60
+    private let timerInterval: TimeInterval = 1
+    private let duration: TimeInterval = 25 * 60
+
+    var elapsedTime: TimeInterval {
+        guard let start = startDate else {return 0}
+        return min(currentDateTime.timeIntervalSince(start), duration)
+    }
+
+    var remainingTime: TimeInterval {
+        max(duration - elapsedTime, 0)
+    }
+
+    func updateTimeValues() {
+        self.currentDateTime = Date()
+        self.progress = CGFloat(elapsedTime / duration)
+    }
+
+    func startTimer() {
+        self.currentDateTime = Date()
+        self.isRunning = true
+        self.startDate = Date()
+        self.progress = 0.0
+
+        self.timer?.invalidate()
+
+        self.timer = Timer.scheduledTimer(withTimeInterval: timerInterval, repeats: true) {_ in
+            Task { @MainActor in
+                self.updateTimeValues()
+
+                if self.remainingTime >= self.duration {
+                    self.resetTimer()
+                }
+            }
+        }
+    }
+
+    func resetTimer() {
+        self.timer?.invalidate()
+        self.timer = nil
+        currentDateTime = Date()
+        isRunning = false
+        progress = 0.0
+        startDate = Date()
+    }
 }
