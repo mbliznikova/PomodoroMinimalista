@@ -26,11 +26,13 @@ struct ContentView: View {
                 .rotationEffect(.degrees(-90))
 
             Button("", systemImage: timerController.isRunning ? "stop.fill" : "play.fill" ) {
-                timerController.startTimer()
+                timerController.toggleTimer()
+
             }
             .buttonStyle(PlainButtonStyle())
             .font(.system(size: 70))
             .foregroundStyle(.red)
+
         }
     }
 }

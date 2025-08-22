@@ -28,6 +28,14 @@ class TimerController: ObservableObject {
         max(duration - elapsedTime, 0)
     }
 
+    func toggleTimer() {
+        if self.isRunning {
+            self.resetTimer()
+        } else {
+            self.startTimer()
+        }
+    }
+
     func updateTimeValues() {
         self.currentDateTime = Date()
         self.progress = CGFloat(elapsedTime / duration)
