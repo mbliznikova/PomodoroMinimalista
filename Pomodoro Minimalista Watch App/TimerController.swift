@@ -16,7 +16,7 @@ class TimerController: ObservableObject {
 
     private var startDate: Date?
     private var timer: Timer?
-    private let timerInterval: TimeInterval = 1
+    private let timerInterval: TimeInterval = 0.05
     private let duration: TimeInterval = 25 * 60
 
     var elapsedTime: TimeInterval {
@@ -45,7 +45,7 @@ class TimerController: ObservableObject {
             Task { @MainActor in
                 self.updateTimeValues()
 
-                if self.remainingTime >= self.duration {
+                if self.elapsedTime >= self.duration {
                     self.resetTimer()
                 }
             }

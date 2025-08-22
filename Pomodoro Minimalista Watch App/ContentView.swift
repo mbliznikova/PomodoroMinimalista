@@ -8,16 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var timerController:TimerController
-
-    @State private var progress: Double = 0.3
-
+    @ObservedObject var timerController: TimerController
     
     var body: some View {
         ZStack {
 
             Circle()
-                .trim(from: 0, to: progress) // progress goes here?
+                .trim(from: 0, to: timerController.progress) // progress goes here?
                 .stroke(
                     Color.red,
                     style: StrokeStyle(
@@ -29,7 +26,7 @@ struct ContentView: View {
                 .rotationEffect(.degrees(-90))
 
             Button("", systemImage: timerController.isRunning ? "stop.fill" : "play.fill" ) {
-                timerController.isRunning.toggle()
+                timerController.startTimer()
             }
             .buttonStyle(PlainButtonStyle())
             .font(.system(size: 70))
