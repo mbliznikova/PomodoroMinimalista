@@ -14,26 +14,35 @@ struct ContentView: View {
         ZStack {
 
             Circle()
-                .trim(from: 0, to: timerController.progress) // progress goes here?
+                .trim(from: 0, to: timerController.progress)
                 .stroke(
                     Color.red,
                     style: StrokeStyle(
-                            lineWidth: 5,
-                            lineCap: .round
-                        ))
-//                .foregroundColor(.red)
+                        lineWidth: 5,
+                        lineCap: .round
+                    ))
+            //                .foregroundColor(.red)
                 .frame(width: 200, height: 200)
                 .rotationEffect(.degrees(-90))
 
-            Button("", systemImage: timerController.isRunning ? "stop.fill" : "play.fill" ) {
-                timerController.toggleTimer()
+            VStack{
+                Text(timerController.isRunning ? "\(Int(timerController.remainingTime))" : "")
+                    .foregroundColor(.red)
+                    .bold()
+                    .font(.system(size: 30))
 
-            }
-            .buttonStyle(PlainButtonStyle())
-            .font(.system(size: 70))
-            .foregroundStyle(.red)
+                Button("", systemImage: timerController.isRunning ? "stop.fill" : "play.fill" ) {
+                    timerController.toggleTimer()
+                }
+                .buttonStyle(PlainButtonStyle())
+                .font(.system(size: 70))
+                .foregroundStyle(.red)
+                .padding()
+            }.padding()
 
         }
+        .padding(.bottom, 20)
+
     }
 }
 
