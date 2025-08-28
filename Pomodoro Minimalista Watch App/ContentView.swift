@@ -11,37 +11,43 @@ struct ContentView: View {
     @ObservedObject var timerController: TimerController
     
     var body: some View {
-        ZStack {
 
-            Circle()
-                .trim(from: 0, to: timerController.progress)
-                .stroke(
-                    Color.red,
-                    style: StrokeStyle(
-                        lineWidth: 5,
-                        lineCap: .round
-                    ))
-            //                .foregroundColor(.red)
-                .frame(width: 200, height: 200)
-                .rotationEffect(.degrees(-90))
+        GeometryReader { geometry in
+            let circleSize = min(geometry.size.width, geometry.size.height) * 0.95
 
-            VStack{
-                Text(timerController.isRunning ? "\(Int(timerController.remainingTime))" : "")
-                    .foregroundColor(.red)
-                    .bold()
-                    .font(.system(size: 30))
+            ZStack {
 
-                Button("", systemImage: timerController.isRunning ? "stop.fill" : "play.fill" ) {
-                    timerController.toggleTimer()
+                Circle()
+                    .trim(from: 0, to: timerController.progress)
+                    .stroke(
+                        Color.red,
+                        style: StrokeStyle(
+                            lineWidth: max(circleSize * 0.025, 5),
+                            lineCap: .round
+                        ))
+                //                .foregroundColor(.red)
+                    .frame(width: circleSize, height: circleSize)
+                    .rotationEffect(.degrees(-90))
+
+                VStack{
+                    Text(timerController.isRunning ? "\(Int(timerController.remainingTime))" : "")
+                        .foregroundColor(.red)
+                        .bold()
+                        .font(.system(size: min(circleSize * 0.2, 40)))
+
+                    Button("", systemImage: timerController.isRunning ? "stop.fill" : "play.fill" ) {
+                        timerController.toggleTimer()
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    .font(.system(size: min(circleSize * 0.4, 60)))
+                    .foregroundStyle(.red)
                 }
-                .buttonStyle(PlainButtonStyle())
-                .font(.system(size: 70))
-                .foregroundStyle(.red)
-                .padding()
-            }.padding()
+
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
 
         }
-        .padding(.bottom, 20)
+        .ignoresSafeArea(.all)
 
     }
 }
