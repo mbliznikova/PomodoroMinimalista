@@ -30,9 +30,8 @@ struct ContentView: View {
                     .rotationEffect(.degrees(-90))
 
                 VStack{
-                    Text(timerController.isRunning ? "\(Int(timerController.remainingTime))" : "")
+                    Text(timerController.isRunning ? timerController.formattedRemainingTime : "25:00")
                         .foregroundColor(.red)
-                        .bold()
                         .font(.system(size: min(circleSize * 0.2, 40)))
 
                     Button("", systemImage: timerController.isRunning ? "stop.fill" : "play.fill" ) {

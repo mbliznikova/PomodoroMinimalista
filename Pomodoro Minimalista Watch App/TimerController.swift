@@ -28,6 +28,12 @@ class TimerController: ObservableObject {
         max(duration - elapsedTime, 0)
     }
 
+    var formattedRemainingTime: String {
+        let minutes = Int(remainingTime) / 60
+        let seconds = Int(remainingTime) % 60
+        return String(format: "%02d:%02d", minutes, seconds)
+    }
+
     func toggleTimer() {
         if self.isRunning {
             self.resetTimer()
