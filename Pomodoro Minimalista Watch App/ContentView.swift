@@ -30,16 +30,18 @@ struct ContentView: View {
                     .rotationEffect(.degrees(-90))
 
                 VStack{
-                    Text(timerController.isRunning ? timerController.formattedRemainingTime : "25:00")
-                        .foregroundColor(.red)
-                        .font(.system(size: min(circleSize * 0.2, 40)))
-
-                    Button("", systemImage: timerController.isRunning ? "stop.fill" : "play.fill" ) {
-                        timerController.toggleTimer()
+                    if timerController.isRunning {
+                        Text(timerController.isRunning ? timerController.formattedRemainingTime : "")
+                            .foregroundColor(.red)
+                            .font(.system(size: min(circleSize * 0.2, 40)))
+                    } else {
+                        Button("", systemImage: "play.fill" ) {
+                            timerController.toggleTimer()
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .font(.system(size: min(circleSize * 0.4, 60)))
+                        .foregroundStyle(.red)
                     }
-                    .buttonStyle(PlainButtonStyle())
-                    .font(.system(size: min(circleSize * 0.4, 60)))
-                    .foregroundStyle(.red)
                 }
 
             }
