@@ -37,6 +37,7 @@ struct ContentView: View {
                     } else {
                         Button("", systemImage: "play.fill" ) {
                             timerController.toggleTimer()
+                            WKInterfaceDevice.current().play(.start)
                         }
                         .buttonStyle(PlainButtonStyle())
                         .font(.system(size: min(circleSize * 0.4, 60)))

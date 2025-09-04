@@ -60,6 +60,7 @@ class TimerController: ObservableObject {
                 self.updateTimeValues()
 
                 if self.elapsedTime >= self.duration {
+                    WKInterfaceDevice.current().play(.success)
                     self.resetTimer()
                 }
             }
