@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var timerController: TimerController
-    
+
     var body: some View {
 
         GeometryReader { geometry in
@@ -22,12 +22,13 @@ struct ContentView: View {
                     .stroke(
                         Color.red,
                         style: StrokeStyle(
-                            lineWidth: max(circleSize * 0.025, 5),
+                            lineWidth: max(circleSize * 0.03, 5),
                             lineCap: .round
                         ))
                 //                .foregroundColor(.red)
                     .frame(width: circleSize, height: circleSize)
                     .rotationEffect(.degrees(-90))
+                    ._statusBarHidden()
 
                 VStack{
                     if timerController.isRunning {
