@@ -7,6 +7,8 @@
 
 import Foundation
 import SwiftUI
+import UserNotifications
+import WatchKit
 
 @MainActor
 class TimerController: ObservableObject {
@@ -34,6 +36,32 @@ class TimerController: ObservableObject {
         return String(format: "%02d:%02d", minutes, seconds)
     }
 
+    func requestNotificationPermission() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) {granted, error in
+            if let error = error {
+                print("Notification permission error \(error)")
+            }
+        }
+    }
+
+    func scheduleNotification(after seconds: TimeInterval) {
+        let content = UNMutableNotificationContent()
+        content.title = "Pomodoro Complete"
+        content.body = "Your focus session is done"
+        content.sound = .default
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
+        let request = UNNotificationRequest(identifier: "pomodoroTimer", content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request) {error in
+            if let error = error {
+                print("Error scheduling notification: \(error)")
+            } else {
+                print("Notification scheduled successfully!")
+            }
+        }
+    }
+
     func toggleTimer() {
         if self.isRunning {
             self.resetTimer()
@@ -54,12 +82,15 @@ class TimerController: ObservableObject {
         self.progress = 0.0
 
         self.timer?.invalidate()
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["pomodoroTimer"])
+
+        self.scheduleNotification(after: self.duration)
 
         self.timer = Timer.scheduledTimer(withTimeInterval: timerInterval, repeats: true) {_ in
             Task { @MainActor in
                 self.updateTimeValues()
 
-                if self.elapsedTime >= self.duration {
+                if self.elapsedTime >= self.duration && WKExtension.shared().applicationState == .active {
                     WKInterfaceDevice.current().play(.success)
                     usleep(250_000)
                     WKInterfaceDevice.current().play(.success)
@@ -74,11 +105,16 @@ class TimerController: ObservableObject {
     }
 
     func resetTimer() {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["pomodoroTimer"])
         self.timer?.invalidate()
         self.timer = nil
         currentDateTime = Date()
         isRunning = false
         progress = 0.0
         startDate = Date()
+    }
+
+    init() {
+        requestNotificationPermission()
     }
 }
