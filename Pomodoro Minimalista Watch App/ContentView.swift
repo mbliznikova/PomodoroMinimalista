@@ -15,35 +15,39 @@ struct ContentView: View {
         GeometryReader { geometry in
             let circleSize = min(geometry.size.width, geometry.size.height) * 0.95
 
-            ZStack {
+            TimelineView(.periodic(from: .now, by: 1.0)) { context in
+                let isLive = context.cadence == .live
 
-                Circle()
-                    .trim(from: 0, to: timerController.progress)
-                    .stroke(
-                        Color.red,
-                        style: StrokeStyle(
-                            lineWidth: max(circleSize * 0.03, 5),
-                            lineCap: .round
-                        ))
-                //                .foregroundColor(.red)
-                    .frame(width: circleSize, height: circleSize)
-                    .rotationEffect(.degrees(-90))
-                    ._statusBarHidden()
+                ZStack {
+                    Circle()
+                        .trim(from: 0, to: timerController.displayProgress(roundToMinutes: !isLive))
+                        .stroke(
+                            Color.red,
+                            style: StrokeStyle(
+                                lineWidth: max(circleSize * 0.03, 5),
+                                lineCap: .round
+                            ))
+                    //                .foregroundColor(.red)
+                        .frame(width: circleSize, height: circleSize)
+                        .rotationEffect(.degrees(-90))
+                        ._statusBarHidden()
 
-                VStack{
-                    if timerController.isRunning {
-                        Text(timerController.isRunning ? timerController.formattedRemainingTime : "")
-                            .foregroundColor(.red)
-                            .font(.system(size: min(circleSize * 0.2, 40)))
-                    } else {
-                        Button("", systemImage: "play.fill" ) {
-                            timerController.toggleTimer()
-                            WKInterfaceDevice.current().play(.start)
+                    VStack{
+                        if timerController.isRunning {
+                            Text(timerController.getFormattedRemainingTime(showSeconds: isLive))
+                                .foregroundColor(.red)
+                                .font(.system(size: min(circleSize * 0.2, 40)))
+                        } else {
+                            Button("", systemImage: "play.fill" ) {
+                                timerController.toggleTimer()
+                                WKInterfaceDevice.current().play(.start)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            .font(.system(size: min(circleSize * 0.4, 60)))
+                            .foregroundStyle(.red)
                         }
-                        .buttonStyle(PlainButtonStyle())
-                        .font(.system(size: min(circleSize * 0.4, 60)))
-                        .foregroundStyle(.red)
                     }
+
                 }
 
             }
@@ -53,6 +57,7 @@ struct ContentView: View {
         .ignoresSafeArea(.all)
 
     }
+
 }
 
 #Preview {

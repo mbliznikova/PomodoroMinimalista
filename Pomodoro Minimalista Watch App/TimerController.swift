@@ -15,8 +15,8 @@ class TimerController: ObservableObject {
     @Published var currentDateTime = Date()
     @Published var isRunning: Bool = false
     @Published var progress: CGFloat = 0.0
-
     private var startDate: Date?
+
     private var timer: Timer?
     private let timerInterval: TimeInterval = 0.05
     private let duration: TimeInterval = 25 * 60
@@ -30,10 +30,21 @@ class TimerController: ObservableObject {
         max(duration - elapsedTime, 0)
     }
 
-    var formattedRemainingTime: String {
+    func getFormattedRemainingTime(showSeconds: Bool) -> String {
         let minutes = Int(remainingTime) / 60
         let seconds = Int(remainingTime) % 60
-        return String(format: "%02d:%02d", minutes, seconds)
+        return showSeconds ? String(format: "%02d:%02d", minutes, seconds) : String(format:"%02d:--", minutes)
+    }
+
+    func displayProgress(roundToMinutes: Bool) -> CGFloat {
+        if roundToMinutes {
+            let durationMinutes = Int(duration / 60)
+            let elapsedMinutes = Int(elapsedTime / 60)
+            let minuteProgress = CGFloat(elapsedMinutes) / CGFloat(durationMinutes)
+
+            return max(minuteProgress, 0.001)
+        }
+        return self.progress
     }
 
     func requestNotificationPermission() {
@@ -91,12 +102,7 @@ class TimerController: ObservableObject {
                 self.updateTimeValues()
 
                 if self.elapsedTime >= self.duration && WKExtension.shared().applicationState == .active {
-                    WKInterfaceDevice.current().play(.success)
-                    usleep(250_000)
-                    WKInterfaceDevice.current().play(.success)
-                    usleep(250_000)
-                    WKInterfaceDevice.current().play(.success)
-                    usleep(250_000)
+                    WKInterfaceDevice.current().play(.notification) // To be consistent with system alert (default for UNMutableNotificationContent)
 
                     self.resetTimer()
                 }
