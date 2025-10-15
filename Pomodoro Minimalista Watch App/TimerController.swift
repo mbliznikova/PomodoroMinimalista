@@ -23,7 +23,7 @@ class TimerController: ObservableObject {
 
     var elapsedTime: TimeInterval {
         guard let start = startDate else {return 0}
-        return min(currentDateTime.timeIntervalSince(start), duration)
+        return min(Date().timeIntervalSince(start), duration)
     }
 
     var remainingTime: TimeInterval {
