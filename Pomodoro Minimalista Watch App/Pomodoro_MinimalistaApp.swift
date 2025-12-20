@@ -7,9 +7,15 @@
 
 import SwiftUI
 
+import Mixpanel
+
 @main
 struct Pomodoro_Minimalista_Watch_AppApp: App {
     @StateObject var timerController: TimerController = TimerController()
+
+    init() {
+        Mixpanel.initialize(token: "TOKEN_HERE", useUniqueDistinctId: true)
+    }
 
     var body: some Scene {
         WindowGroup {

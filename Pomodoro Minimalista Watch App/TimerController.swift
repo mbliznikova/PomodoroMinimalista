@@ -10,6 +10,8 @@ import SwiftUI
 import UserNotifications
 import WatchKit
 
+import Mixpanel
+
 @MainActor
 class TimerController: ObservableObject {
     @Published var currentDateTime = Date()
@@ -103,6 +105,8 @@ class TimerController: ObservableObject {
 
                 if self.elapsedTime >= self.duration && WKExtension.shared().applicationState == .active {
                     WKInterfaceDevice.current().play(.notification) // To be consistent with system alert (default for UNMutableNotificationContent)
+
+                    Mixpanel.mainInstance().track(event: "Start timer")
 
                     self.resetTimer()
                 }

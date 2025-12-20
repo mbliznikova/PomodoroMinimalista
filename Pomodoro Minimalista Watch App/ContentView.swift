@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+import Mixpanel
+
 struct ContentView: View {
     @ObservedObject var timerController: TimerController
 
@@ -40,6 +42,7 @@ struct ContentView: View {
                         } else {
                             Button("", systemImage: "play.fill" ) {
                                 timerController.toggleTimer()
+                                Mixpanel.mainInstance().track(event: "Start timer")
                                 WKInterfaceDevice.current().play(.start)
                             }
                             .buttonStyle(PlainButtonStyle())

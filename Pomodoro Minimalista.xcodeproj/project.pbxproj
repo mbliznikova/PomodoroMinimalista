@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F3B78A772D8A517A002CB6E8 /* Pomodoro Minimalista Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F3B78A762D8A517A002CB6E8 /* Pomodoro Minimalista Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F3C23A672EF6181A003300A8 /* Mixpanel in Frameworks */ = {isa = PBXBuildFile; productRef = F3C23A662EF6181A003300A8 /* Mixpanel */; };
+		F3C23A692EF61856003300A8 /* Mixpanel in Frameworks */ = {isa = PBXBuildFile; productRef = F3C23A682EF61856003300A8 /* Mixpanel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3C23A672EF6181A003300A8 /* Mixpanel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3C23A692EF61856003300A8 /* Mixpanel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +202,7 @@
 			);
 			name = "Pomodoro Minimalista";
 			packageProductDependencies = (
+				F3C23A662EF6181A003300A8 /* Mixpanel */,
 			);
 			productName = "Pomodoro Minimalista";
 			productReference = F3B78A502D8A5179002CB6E8 /* Pomodoro Minimalista.app */;
@@ -266,6 +271,7 @@
 			);
 			name = "Pomodoro Minimalista Watch App";
 			packageProductDependencies = (
+				F3C23A682EF61856003300A8 /* Mixpanel */,
 			);
 			productName = "Pomodoro Minimalista Watch App";
 			productReference = F3B78A762D8A517A002CB6E8 /* Pomodoro Minimalista Watch App.app */;
@@ -360,6 +366,9 @@
 			);
 			mainGroup = F3B78A472D8A5179002CB6E8;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F3C23A652EF6181A003300A8 /* XCRemoteSwiftPackageReference "mixpanel-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F3B78A512D8A5179002CB6E8 /* Products */;
 			projectDirPath = "";
@@ -619,9 +628,11 @@
 				DEVELOPMENT_TEAM = 7B5J3Q4N7K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Pomodoro-Minimalista-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Pomodoro Minimalista";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "Margo.Pomodoro-Minimalista";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -634,7 +645,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+				WATCHOS_DEPLOYMENT_TARGET = 8.7;
 			};
 			name = Debug;
 		};
@@ -649,9 +660,11 @@
 				DEVELOPMENT_TEAM = 7B5J3Q4N7K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Pomodoro-Minimalista-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Pomodoro Minimalista";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "Margo.Pomodoro-Minimalista";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -665,7 +678,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+				WATCHOS_DEPLOYMENT_TARGET = 8.7;
 			};
 			name = Release;
 		};
@@ -680,6 +693,7 @@
 				DEVELOPMENT_TEAM = 7B5J3Q4N7K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Pomodoro-Minimalista-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Pomodoro Minimalista";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -712,6 +726,7 @@
 				DEVELOPMENT_TEAM = 7B5J3Q4N7K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Pomodoro-Minimalista-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Pomodoro Minimalista";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -961,6 +976,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F3C23A652EF6181A003300A8 /* XCRemoteSwiftPackageReference "mixpanel-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mixpanel/mixpanel-swift";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F3C23A662EF6181A003300A8 /* Mixpanel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3C23A652EF6181A003300A8 /* XCRemoteSwiftPackageReference "mixpanel-swift" */;
+			productName = Mixpanel;
+		};
+		F3C23A682EF61856003300A8 /* Mixpanel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3C23A652EF6181A003300A8 /* XCRemoteSwiftPackageReference "mixpanel-swift" */;
+			productName = Mixpanel;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F3B78A482D8A5179002CB6E8 /* Project object */;
 }
