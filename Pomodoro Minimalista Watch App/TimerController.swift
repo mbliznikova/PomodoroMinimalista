@@ -118,6 +118,7 @@ class TimerController: ObservableObject {
                     }
 
                     Mixpanel.mainInstance().track(event: "Stop timer")
+                    Mixpanel.mainInstance().flush()
                     self.resetTimer()
                 }
             }
