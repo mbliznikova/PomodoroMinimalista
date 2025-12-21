@@ -41,8 +41,8 @@ struct ContentView: View {
                                 .font(.system(size: min(circleSize * 0.2, 40)))
                         } else {
                             Button("", systemImage: "play.fill" ) {
-                                timerController.toggleTimer()
                                 Mixpanel.mainInstance().track(event: "Start timer")
+                                timerController.toggleTimer()
                                 WKInterfaceDevice.current().play(.start)
                             }
                             .buttonStyle(PlainButtonStyle())
@@ -55,6 +55,9 @@ struct ContentView: View {
 
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .onAppear {
+                timerController.reconcileIfNeeded()
+            }
 
         }
         .ignoresSafeArea(.all)

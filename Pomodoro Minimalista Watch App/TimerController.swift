@@ -88,6 +88,15 @@ class TimerController: ObservableObject {
         self.progress = CGFloat(elapsedTime / duration)
     }
 
+    func reconcileIfNeeded() {
+        guard let startDate else { return }
+        if Date().timeIntervalSince(startDate) >= duration {
+            resetTimer()
+        } else if isRunning {
+            updateTimeValues()
+        }
+    }
+
     func startTimer() {
         self.currentDateTime = Date()
         self.isRunning = true
@@ -103,11 +112,12 @@ class TimerController: ObservableObject {
             Task { @MainActor in
                 self.updateTimeValues()
 
-                if self.elapsedTime >= self.duration && WKExtension.shared().applicationState == .active {
-                    WKInterfaceDevice.current().play(.notification) // To be consistent with system alert (default for UNMutableNotificationContent)
+                if self.elapsedTime >= self.duration {
+                    if WKExtension.shared().applicationState == .active {
+                        WKInterfaceDevice.current().play(.notification) // To be consistent with system alert (default for UNMutableNotificationContent)
+                    }
 
-                    Mixpanel.mainInstance().track(event: "Start timer")
-
+                    Mixpanel.mainInstance().track(event: "Stop timer")
                     self.resetTimer()
                 }
             }
