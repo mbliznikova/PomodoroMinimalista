@@ -88,15 +88,6 @@ class TimerController: ObservableObject {
         self.progress = CGFloat(elapsedTime / duration)
     }
 
-    func reconcileIfNeeded() {
-        guard let startDate else { return }
-        if Date().timeIntervalSince(startDate) >= duration {
-            resetTimer()
-        } else if isRunning {
-            updateTimeValues()
-        }
-    }
-
     func startTimer() {
         self.currentDateTime = Date()
         self.isRunning = true
@@ -132,7 +123,7 @@ class TimerController: ObservableObject {
         currentDateTime = Date()
         isRunning = false
         progress = 0.0
-        startDate = Date()
+        startDate = nil
     }
 
     init() {

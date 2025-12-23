@@ -55,9 +55,6 @@ struct ContentView: View {
 
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .onAppear {
-                timerController.reconcileIfNeeded()
-            }
 
         }
         .ignoresSafeArea(.all)
