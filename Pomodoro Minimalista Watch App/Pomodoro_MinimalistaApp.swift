@@ -11,7 +11,13 @@ import Mixpanel
 
 @main
 struct Pomodoro_Minimalista_Watch_AppApp: App {
+    enum TabIdentifier: Hashable {
+        case main
+        case settings
+    }
+
     @StateObject var timerController: TimerController = TimerController()
+    @State private var selectedTab = TabIdentifier.main
 
     init() {
         Mixpanel.initialize(token: "TOKEN_HERE", useUniqueDistinctId: true)
@@ -19,7 +25,12 @@ struct Pomodoro_Minimalista_Watch_AppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(timerController: timerController)
+            TabView(selection: $selectedTab) {
+                SettingsView()
+                    .tag(TabIdentifier.settings)
+                ContentView(timerController: timerController)
+                    .tag(TabIdentifier.main)
+            }.tabViewStyle(.page)
         }
     }
 }
