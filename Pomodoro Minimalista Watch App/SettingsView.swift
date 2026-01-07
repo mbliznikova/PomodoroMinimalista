@@ -11,24 +11,35 @@ import Mixpanel
 
 struct SettingsView: View {
     @ObservedObject var timerController: TimerController
+    @State private var crownValue: Double = 25.0
 
     var body: some View {
         VStack {
-            Text("Timer duration")
+            Text("Duration")
                 .foregroundColor(.red)
-            Picker("", selection: $timerController.sessionMinutes) {
-                ForEach(1...60, id: \.self) {minutes in
-                    Text("\(minutes) min")
-                        .foregroundColor(.red)
+                .font(.headline)
+            Text("\(Int(crownValue)) min")
+                .foregroundColor(.red)
+                .font(.title)
+                .padding()
+                .focusable()
+                .digitalCrownRotation(
+                    $crownValue,
+                    from: 1.0,
+                    through: 60.0,
+                    by: 1.0,
+                    sensitivity: .low,
+                    isContinuous: true,
+                    isHapticFeedbackEnabled: true,
+                )
+                .onChange(of: crownValue) {
+                    let minutes = Int(crownValue)
+                    timerController.updateSessionMinutes(minutes)
+                    Mixpanel.mainInstance().track(event: "Change session duration")
                 }
-            }
-            .onChange(of: timerController.sessionMinutes) { newValue in
-                timerController.updateSessionMinutes(newValue)
-                Mixpanel.mainInstance().track(event: "Change session duration")
-            }
-            .pickerStyle(.wheel)
-            .disabled(timerController.isRunning)
-            .background(Color.black)
+                .onAppear() {
+                    crownValue = Double(timerController.sessionMinutes)
+                }
         }
     }
 }
