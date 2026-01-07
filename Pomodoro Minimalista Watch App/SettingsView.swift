@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+import Mixpanel
+
 struct SettingsView: View {
     @ObservedObject var timerController: TimerController
 
@@ -22,6 +24,7 @@ struct SettingsView: View {
             }
             .onChange(of: timerController.sessionMinutes) { newValue in
                 timerController.updateSessionMinutes(newValue)
+                Mixpanel.mainInstance().track(event: "Change session duration")
             }
             .pickerStyle(.wheel)
             .disabled(timerController.isRunning)
