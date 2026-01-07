@@ -26,7 +26,7 @@ struct Pomodoro_Minimalista_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
             TabView(selection: $selectedTab) {
-                SettingsView()
+                SettingsView(timerController: timerController)
                     .tag(TabIdentifier.settings)
                 ContentView(timerController: timerController)
                     .tag(TabIdentifier.main)
