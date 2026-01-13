@@ -14,6 +14,7 @@ struct Pomodoro_Minimalista_Watch_AppApp: App {
     enum TabIdentifier: Hashable {
         case main
         case settings
+        case stats
     }
 
     @StateObject var timerController: TimerController = TimerController()
@@ -30,6 +31,8 @@ struct Pomodoro_Minimalista_Watch_AppApp: App {
                     .tag(TabIdentifier.settings)
                 ContentView(timerController: timerController)
                     .tag(TabIdentifier.main)
+                StatsView()
+                    .tag(TabIdentifier.stats)
             }.tabViewStyle(.page)
         }
     }
