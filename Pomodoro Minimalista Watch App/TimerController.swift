@@ -14,6 +14,7 @@ import Mixpanel
 
 @MainActor
 class TimerController: ObservableObject {
+    @Published var totalSessionCount: Int
     @Published var sessionMinutes: Int
     @Published var currentDateTime = Date()
     @Published var isRunning: Bool = false
@@ -30,6 +31,10 @@ class TimerController: ObservableObject {
     func updateSessionMinutes(_ minutes: Int) {
         self.sessionMinutes = minutes
         UserDefaults.standard.set(minutes, forKey: "sessionMinutes")
+    }
+
+    func incrementTotalSessionsCount() {
+        UserDefaults.standard.set(self.totalSessionCount + 1, forKey: "sessionsCount")
     }
 
     var elapsedTime: TimeInterval {
@@ -119,6 +124,7 @@ class TimerController: ObservableObject {
 
                     Mixpanel.mainInstance().track(event: "Stop timer")
                     Mixpanel.mainInstance().flush()
+                    self.incrementTotalSessionsCount()
                     self.resetTimer()
                 }
             }
@@ -138,6 +144,7 @@ class TimerController: ObservableObject {
     init() {
         let savedMinutes = UserDefaults.standard.integer(forKey: "sessionMinutes")
         self.sessionMinutes = savedMinutes == 0 ? 25 : savedMinutes
+        self.totalSessionCount = UserDefaults.standard.integer(forKey: "sessionsCount")
         requestNotificationPermission()
     }
 }
