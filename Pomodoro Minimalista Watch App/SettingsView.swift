@@ -32,6 +32,7 @@ struct SettingsView: View {
                     isContinuous: true,
                     isHapticFeedbackEnabled: true,
                 )
+                .disabled(timerController.isRunning)
                 .onChange(of: crownValue) {
                     let minutes = Int(crownValue)
                     timerController.updateSessionMinutes(minutes)
