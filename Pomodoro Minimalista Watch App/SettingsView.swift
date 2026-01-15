@@ -18,7 +18,7 @@ struct SettingsView: View {
             Text("Duration")
                 .foregroundColor(.red)
                 .font(.headline)
-            Text("\(Int(crownValue)) min")
+            Text("\(Int(crownValue))")
                 .foregroundColor(.red)
                 .font(.title)
                 .padding()
@@ -41,6 +41,9 @@ struct SettingsView: View {
                 .onAppear() {
                     crownValue = Double(timerController.sessionMinutes)
                 }
+            Text("min")
+                .foregroundColor(.red)
+                .font(.headline)
         }
     }
 }

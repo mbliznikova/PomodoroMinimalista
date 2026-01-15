@@ -15,8 +15,9 @@ struct StatsView: View {
 
     var body: some View {
         VStack {
-            Text("Sessions:")
+            Text("Sessions")
                 .foregroundColor(.red)
+                .font(.headline)
                 .padding()
             Text("\(Int(timerController.totalSessionCount))")
                 .foregroundColor(.red)
