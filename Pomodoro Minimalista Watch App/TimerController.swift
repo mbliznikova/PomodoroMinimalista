@@ -15,11 +15,13 @@ import Mixpanel
 @MainActor
 class TimerController: ObservableObject {
     @Published var totalSessionCount: Int
+    @Published var dailySessionCount: Int
     @Published var sessionMinutes: Int
     @Published var currentDateTime = Date()
     @Published var isRunning: Bool = false
     @Published var progress: CGFloat = 0.0
     private var startDate: Date?
+    private var lastRecordedDate: Date?
 
     private var timer: Timer?
     private let timerInterval: TimeInterval = 0.05
@@ -28,14 +30,29 @@ class TimerController: ObservableObject {
         TimeInterval(self.sessionMinutes * 60)
     }
 
+    private func isToday(_ date: Date?) -> Bool {
+        guard let date = date else {return false}
+        return Calendar.current.isDateInToday(date)
+    }
+
     func updateSessionMinutes(_ minutes: Int) {
         self.sessionMinutes = minutes
         UserDefaults.standard.set(minutes, forKey: "sessionMinutes")
     }
 
-    func incrementTotalSessionsCount() {
+    func incrementSessionsCounts() {
         self.totalSessionCount += 1
-        UserDefaults.standard.set(self.totalSessionCount + 1, forKey: "sessionsCount")
+        UserDefaults.standard.set(self.totalSessionCount, forKey: "sessionsCount")
+
+        if self.isToday(self.lastRecordedDate) {
+            self.dailySessionCount += 1
+        } else {
+            self.dailySessionCount = 1
+        }
+
+        UserDefaults.standard.set(self.dailySessionCount, forKey: "dailySessionsCount")
+        UserDefaults.standard.set(self.lastRecordedDate, forKey: "lastRecordedDate")
+        self.lastRecordedDate = Date()
     }
 
     var elapsedTime: TimeInterval {
@@ -125,7 +142,7 @@ class TimerController: ObservableObject {
 
                     Mixpanel.mainInstance().track(event: "Stop timer")
                     Mixpanel.mainInstance().flush()
-                    self.incrementTotalSessionsCount()
+                    self.incrementSessionsCounts()
                     self.resetTimer()
                 }
             }
@@ -145,7 +162,12 @@ class TimerController: ObservableObject {
     init() {
         let savedMinutes = UserDefaults.standard.integer(forKey: "sessionMinutes")
         self.sessionMinutes = savedMinutes == 0 ? 25 : savedMinutes
+
+        self.lastRecordedDate = UserDefaults.standard.object(forKey: "lastRecordedDate") as? Date
+
+        self.dailySessionCount = UserDefaults.standard.integer(forKey: "dailySessionsCount")
         self.totalSessionCount = UserDefaults.standard.integer(forKey: "sessionsCount")
+
         requestNotificationPermission()
     }
 }
