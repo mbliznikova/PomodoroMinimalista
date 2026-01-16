@@ -34,6 +34,7 @@ class TimerController: ObservableObject {
     }
 
     func incrementTotalSessionsCount() {
+        self.totalSessionCount += 1
         UserDefaults.standard.set(self.totalSessionCount + 1, forKey: "sessionsCount")
     }
 
