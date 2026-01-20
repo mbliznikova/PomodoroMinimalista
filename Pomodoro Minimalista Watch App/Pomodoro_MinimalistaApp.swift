@@ -31,7 +31,7 @@ struct Pomodoro_Minimalista_Watch_AppApp: App {
                     .tag(TabIdentifier.settings)
                 ContentView(timerController: timerController)
                     .tag(TabIdentifier.main)
-                StatsView(timerController: TimerController())
+                StatsView(timerController: timerController)
                     .tag(TabIdentifier.stats)
             }.tabViewStyle(.page)
         }
