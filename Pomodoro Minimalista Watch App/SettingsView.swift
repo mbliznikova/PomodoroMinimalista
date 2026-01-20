@@ -20,7 +20,7 @@ struct SettingsView: View {
                 .font(.headline)
             Text("\(Int(crownValue))")
                 .foregroundColor(.red)
-                .font(.title)
+                .font(.system(size: 48))
                 .padding()
                 .focusable()
                 .digitalCrownRotation(
