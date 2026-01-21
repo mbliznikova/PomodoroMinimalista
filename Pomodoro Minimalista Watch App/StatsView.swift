@@ -19,19 +19,19 @@ struct StatsView: View {
             VStack {
                 Text("\(Int(timerController.dailySessionCount))")
                     .foregroundColor(.red)
-                    .font(.system(size: 48))
+                    .font(.system(size: 46))
                 Text("Today")
                     .foregroundColor(.red)
-                    .font(.caption)
+                    .font(.headline)
 
             }
             VStack {
                 Text("\(Int(timerController.totalSessionCount))")
-                    .font(.system(size: 48))
+                    .font(.system(size: 46))
                     .foregroundColor(.red)
                 Text("Total")
                     .foregroundColor(.red)
-                    .font(.caption)
+                    .font(.headline)
             }
             Spacer()
         }

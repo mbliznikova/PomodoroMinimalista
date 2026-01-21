@@ -20,7 +20,7 @@ struct SettingsView: View {
                 .font(.headline)
             Text("\(Int(crownValue))")
                 .foregroundColor(.red)
-                .font(.system(size: 48))
+                .font(.system(size: 46))
                 .padding()
                 .focusable()
                 .digitalCrownRotation(
@@ -41,7 +41,7 @@ struct SettingsView: View {
                 .onAppear() {
                     crownValue = Double(timerController.sessionMinutes)
                 }
-            Text("min")
+            Text("minutes")
                 .foregroundColor(.red)
                 .font(.headline)
         }
