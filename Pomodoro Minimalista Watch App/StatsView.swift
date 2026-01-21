@@ -35,6 +35,7 @@ struct StatsView: View {
             }
             Spacer()
         }
+        ._statusBarHidden()
     }
 }
 

@@ -45,6 +45,7 @@ struct SettingsView: View {
                 .foregroundColor(.red)
                 .font(.headline)
         }
+        ._statusBarHidden()
     }
 }
 
