@@ -40,6 +40,11 @@ struct ContentView: View {
                             ))
                         .rotationEffect(.degrees(-90))
                         ._statusBarHidden()
+
+                    Button("", systemImage: "play.fill"){}
+                    .buttonStyle(PlainButtonStyle())
+                    .font(.system(size: min(circleSize * 0.4, 60)))
+                    .foregroundStyle(.red)
                 }
             }
 
