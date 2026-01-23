@@ -15,6 +15,7 @@ struct ContentView: View {
 
             VStack {
                 Text("Session duration")
+                    .font(.headline)
                     .foregroundColor(.red)
                 Picker("Session duration", selection: $pickerValue) {
                     ForEach(1...60, id: \.self) { number in
@@ -26,16 +27,20 @@ struct ContentView: View {
                 .pickerStyle(.wheel)
             }
 
-            ZStack {
-                Circle()
-                    .stroke(
-                        Color.red,
-                        style: StrokeStyle(
-                            lineCap: .round
-                        ))
-                    .rotationEffect(.degrees(-90))
-                    ._statusBarHidden()
+            GeometryReader { geometry in
+                let circleSize = min(geometry.size.width, geometry.size.height) * 0.95
 
+                ZStack {
+                    Circle()
+                        .stroke(
+                            Color.red,
+                            style: StrokeStyle(
+                                lineWidth: circleSize * 0.01,
+                                lineCap: .round
+                            ))
+                        .rotationEffect(.degrees(-90))
+                        ._statusBarHidden()
+                }
             }
 
             VStack{
