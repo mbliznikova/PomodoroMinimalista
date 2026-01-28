@@ -27,32 +27,11 @@ struct ContentView: View {
                 .pickerStyle(.wheel)
             }
 
-            GeometryReader { geometry in
-                let circleSize = min(geometry.size.width, geometry.size.height) * 0.95
-
-                ZStack {
-                    Circle()
-                        .stroke(
-                            Color.red,
-                            style: StrokeStyle(
-                                lineWidth: circleSize * 0.01,
-                                lineCap: .round
-                            ))
-                        .rotationEffect(.degrees(-90))
-                        ._statusBarHidden()
-
-                    Button("", systemImage: "play.fill"){}
-                    .buttonStyle(PlainButtonStyle())
-                    .font(.system(size: min(circleSize * 0.4, 60)))
-                    .foregroundStyle(.red)
-                }
-            }
-
             VStack{
-                Text("Today")
+                Text("Sessions today")
                     .font(.headline)
                     .foregroundColor(.red)
-                Text("Total")
+                Text("Sessions total")
                     .font(.headline)
                     .foregroundColor(.red)
             }
