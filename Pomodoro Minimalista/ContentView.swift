@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var pickerValue: Double = 25.0
+    @ObservedObject var store: AppDataStore
 
     var body: some View {
         VStack {
@@ -17,7 +17,10 @@ struct ContentView: View {
                 Text("Session duration")
                     .font(.headline)
                     .foregroundColor(.red)
-                Picker("Session duration", selection: $pickerValue) {
+                Picker("Session duration", selection: Binding(
+                    get: { store.sessionMinutes },
+                    set: { store.updateSessionMinutes($0) }
+                )) {
                     ForEach(1...60, id: \.self) { number in
                         Text("\(Int(number))")
                             .font(.headline)
@@ -28,10 +31,10 @@ struct ContentView: View {
             }
 
             VStack{
-                Text("Sessions today")
+                Text("Sessions today: \(store.dailySessionCount)")
                     .font(.headline)
                     .foregroundColor(.red)
-                Text("Sessions total")
+                Text("Sessions total: \(store.totalSessionCount)")
                     .font(.headline)
                     .foregroundColor(.red)
             }
@@ -42,5 +45,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(store: AppDataStore())
 }

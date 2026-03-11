@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct Pomodoro_MinimalistaApp: App {
+    @StateObject var store = AppDataStore()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(store: store)
         }
     }
 }
