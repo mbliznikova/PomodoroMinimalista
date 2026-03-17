@@ -14,17 +14,20 @@ import Mixpanel
 
 @MainActor
 class TimerController: ObservableObject {
-    @Published var totalSessionCount: Int
-    @Published var dailySessionCount: Int
-    @Published var sessionMinutes: Int
+    @Published var totalSessionCount: Int = 0
+    @Published var dailySessionCount: Int = 0
+    @Published var sessionMinutes: Int = 25
     @Published var currentDateTime = Date()
     @Published var isRunning: Bool = false
     @Published var progress: CGFloat = 0.0
+
     private var startDate: Date?
     private var lastRecordedDate: Date?
 
     private var timer: Timer?
     private let timerInterval: TimeInterval = 0.05
+    private let syncManager = WatchSyncManager.shared
+
 
     var duration: TimeInterval {
         TimeInterval(self.sessionMinutes * 60)
@@ -38,6 +41,7 @@ class TimerController: ObservableObject {
     func updateSessionMinutes(_ minutes: Int) {
         self.sessionMinutes = minutes
         UserDefaults.standard.set(minutes, forKey: "sessionMinutes")
+        syncManager.send(["sessionMinutes": minutes])
     }
 
     func incrementSessionsCounts() {
@@ -53,6 +57,7 @@ class TimerController: ObservableObject {
         UserDefaults.standard.set(self.dailySessionCount, forKey: "dailySessionsCount")
         UserDefaults.standard.set(self.lastRecordedDate, forKey: "lastRecordedDate")
         self.lastRecordedDate = Date()
+        syncManager.send(["sessionsCount": totalSessionCount, "dailySessionsCount": dailySessionCount])
     }
 
     var elapsedTime: TimeInterval {
@@ -160,14 +165,25 @@ class TimerController: ObservableObject {
     }
 
     init() {
-        let savedMinutes = UserDefaults.standard.integer(forKey: "sessionMinutes")
-        self.sessionMinutes = savedMinutes == 0 ? 25 : savedMinutes
-
         self.lastRecordedDate = UserDefaults.standard.object(forKey: "lastRecordedDate") as? Date
 
-        self.dailySessionCount = UserDefaults.standard.integer(forKey: "dailySessionsCount")
-        self.totalSessionCount = UserDefaults.standard.integer(forKey: "sessionsCount")
-
         requestNotificationPermission()
+
+        syncManager.onReceive = { [weak self] context in
+            guard let self else { return }
+            if let v = context["sessionMinutes"] as? Int, v > 0 {
+                self.sessionMinutes = v
+                UserDefaults.standard.set(v, forKey: "sessionMinutes")
+            }
+            if let v = context["sessionsCount"] as? Int, v > 0 {
+                self.totalSessionCount = v
+                UserDefaults.standard.set(v, forKey: "sessionsCount")
+            }
+            if let v = context["dailySessionsCount"] as? Int, v > 0 {
+                self.dailySessionCount = v
+                UserDefaults.standard.set(v, forKey: "dailySessionsCount")
+            }
+        }
+        syncManager.activate()
     }
 }
