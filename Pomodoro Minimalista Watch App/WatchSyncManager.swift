@@ -29,7 +29,9 @@ class WatchSyncManager: NSObject, WCSessionDelegate {
             let value = cloud > 0 ? cloud : local
             if value > 0 { initial[key] = value }
         }
-        if !initial.isEmpty { onReceive?(initial) }
+        if !initial.isEmpty {
+            Task { @MainActor in self.onReceive?(initial) }
+        }
 
         NotificationCenter.default.addObserver(
             self,
