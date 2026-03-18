@@ -1,15 +1,16 @@
 //
-//  WatchSyncManager.swift
-//  Pomodoro Minimalista Watch App
+//  PhoneSyncManager.swift
+//  Pomodoro Minimalista
 //
 //  Created by Margarita Bliznikova on 3/12/26.
 //
 
+import Combine
 import Foundation
 import WatchConnectivity
 
-class WatchSyncManager: NSObject, WCSessionDelegate {
-    static let shared = WatchSyncManager()
+class PhoneSyncManager: NSObject, WCSessionDelegate {
+    static let shared = PhoneSyncManager()
 
     var onReceive: (([String: Any]) -> Void)?
     private let kvStore = NSUbiquitousKeyValueStore.default
@@ -21,13 +22,12 @@ class WatchSyncManager: NSObject, WCSessionDelegate {
         }
         kvStore.synchronize()
 
-        // Read initial values: iCloud KV first, fall back to UserDefaults
         var initial: [String: Any] = [:]
         for key in ["sessionMinutes", "sessionsCount", "dailySessionsCount"] {
             let cloud = Int(kvStore.longLong(forKey: key))
             let local = UserDefaults.standard.integer(forKey: key)
             let value = cloud > 0 ? cloud : local
-            if value > 0 { initial[key] = value }
+            if value > 0 {initial[key] = value}
         }
         if !initial.isEmpty {
             Task { @MainActor in self.onReceive?(initial) }
@@ -39,12 +39,13 @@ class WatchSyncManager: NSObject, WCSessionDelegate {
             name: NSUbiquitousKeyValueStore.didChangeExternallyNotification,
             object: kvStore
         )
+
     }
 
     @objc private func iCloudChanged() {
         var updated: [String: Any] = [:]
         for key in ["sessionMinutes", "sessionsCount", "dailySessionsCount"] {
-            if let v = kvStore.object(forKey: key) { updated[key] = v }
+            if let v = kvStore.object(forKey: key) {updated[key] = v}
         }
         if !updated.isEmpty {
             Task { @MainActor in self.onReceive?(updated) }
@@ -58,13 +59,15 @@ class WatchSyncManager: NSObject, WCSessionDelegate {
         do {
             try WCSession.default.updateApplicationContext(context)
         } catch {
-            print("WatchSyncManager WCSession send failed: \(error)")
+            print("PhoneSyncManager WCSession send failed: \(error)")
         }
     }
 
     func session(_ session: WCSession, activationDidCompleteWith state: WCSessionActivationState, error: Error?) {
             if let error = error { print("WatchSyncManager activation error: \(error)") }
     }
+    func sessionDidBecomeInactive(_ session: WCSession) {}
+    func sessionDidDeactivate(_ session: WCSession) { WCSession.default.activate() }
 
     func session(_ session: WCSession, didReceiveApplicationContext context: [String: Any]) {
         for (key, value) in context {
