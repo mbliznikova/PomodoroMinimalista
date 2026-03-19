@@ -11,37 +11,46 @@ struct ContentView: View {
     @ObservedObject var store: AppDataStore
 
     var body: some View {
-        VStack {
+        Form {
 
-            VStack {
-                Text("Session duration")
-                    .font(.headline)
-                    .foregroundColor(.red)
-                Picker("Session duration", selection: Binding(
-                    get: { store.sessionMinutes },
-                    set: { store.updateSessionMinutes($0) }
-                )) {
-                    ForEach(1...60, id: \.self) { number in
-                        Text("\(Int(number))")
+            Section(
+                header: Text("Session duration")
+                    .foregroundColor(.red.opacity(0.8)),
+                content: {
+                    VStack {
+                        Picker("Session duration", selection: Binding(
+                            get: { store.sessionMinutes },
+                            set: { store.updateSessionMinutes($0) }
+                        )) {
+                            ForEach(1...60, id: \.self) { number in
+                                Text("\(Int(number))")
+                                    .font(.headline)
+                                    .foregroundColor(.red)
+                            }
+                        }
+                        .pickerStyle(.wheel)
+                    }
+                })
+
+            Section(
+                header: Text("Session count")
+                    .foregroundColor(.red.opacity(0.8)),
+                content: {
+                    VStack(alignment: .leading){
+                        Text("Today: \(store.dailySessionCount)")
+                            .font(.headline)
+                            .foregroundColor(.red)
+                        Spacer()
+                        Text("Total: \(store.totalSessionCount)")
                             .font(.headline)
                             .foregroundColor(.red)
                     }
-                }
-                .pickerStyle(.wheel)
-            }
+                    .padding()
+                })
 
-            VStack{
-                Text("Sessions today: \(store.dailySessionCount)")
-                    .font(.headline)
-                    .foregroundColor(.red)
-                Text("Sessions total: \(store.totalSessionCount)")
-                    .font(.headline)
-                    .foregroundColor(.red)
-            }
-            .padding()
-        }
-        .padding()
+        }.padding()
     }
+
 }
 
 #Preview {
