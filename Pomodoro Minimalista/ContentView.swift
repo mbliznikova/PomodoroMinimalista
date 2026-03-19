@@ -11,45 +11,51 @@ struct ContentView: View {
     @ObservedObject var store: AppDataStore
 
     var body: some View {
-        Form {
+        NavigationStack(root: {
 
-            Section(
-                header: Text("Session duration"),
-                content: {
-                    VStack {
-                        Picker("Session duration", selection: Binding(
-                            get: { store.sessionMinutes },
-                            set: { store.updateSessionMinutes($0) }
-                        )) {
-                            ForEach(1...60, id: \.self) { number in
-                                Text("\(Int(number))")
+            Form {
+
+                Section(
+                    header: Text("Settings"),
+                    content: {
+                        VStack {
+                            Picker("Session Duration", selection: Binding(
+                                get: { store.sessionMinutes },
+                                set: { store.updateSessionMinutes($0) }
+                            )) {
+                                ForEach(1...60, id: \.self) { number in
+                                    Text("\(Int(number))")
+                                }
+                            }
+                            .pickerStyle(.wheel)
+                        }
+                    })
+
+                Section(
+                    header: Text("Statistics"),
+                    content: {
+                        VStack(alignment: .leading) {
+                            HStack{
+                                Text("Today")
+                                Spacer()
+                                Text("\(store.dailySessionCount)")
+                            }
+                            Spacer()
+                            Divider()
+                            HStack{
+                                Text("Total")
+                                Spacer()
+                                Text("\(store.totalSessionCount)")
                             }
                         }
-                        .pickerStyle(.wheel)
-                    }
-                })
+                        .padding()
+                    })
 
-            Section(
-                header: Text("Session count"),
-                content: {
-                    VStack(alignment: .leading) {
-                        HStack{
-                            Text("Today")
-                            Spacer()
-                            Text("\(store.dailySessionCount)")
-                        }
-                        Spacer()
-                        Divider()
-                        HStack{
-                            Text("Total")
-                            Spacer()
-                            Text("\(store.totalSessionCount)")
-                        }
-                    }
-                    .padding()
-                })
+            }
+            .navigationTitle("Session")
+            .padding()
 
-        }.padding()
+        })
     }
 
 }
