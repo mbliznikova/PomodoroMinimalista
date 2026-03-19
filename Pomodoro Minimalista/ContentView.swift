@@ -14,8 +14,7 @@ struct ContentView: View {
         Form {
 
             Section(
-                header: Text("Session duration")
-                    .foregroundColor(.red.opacity(0.8)),
+                header: Text("Session duration"),
                 content: {
                     VStack {
                         Picker("Session duration", selection: Binding(
@@ -24,8 +23,6 @@ struct ContentView: View {
                         )) {
                             ForEach(1...60, id: \.self) { number in
                                 Text("\(Int(number))")
-                                    .font(.headline)
-                                    .foregroundColor(.red)
                             }
                         }
                         .pickerStyle(.wheel)
@@ -33,17 +30,21 @@ struct ContentView: View {
                 })
 
             Section(
-                header: Text("Session count")
-                    .foregroundColor(.red.opacity(0.8)),
+                header: Text("Session count"),
                 content: {
-                    VStack(alignment: .leading){
-                        Text("Today: \(store.dailySessionCount)")
-                            .font(.headline)
-                            .foregroundColor(.red)
+                    VStack(alignment: .leading) {
+                        HStack{
+                            Text("Today")
+                            Spacer()
+                            Text("\(store.dailySessionCount)")
+                        }
                         Spacer()
-                        Text("Total: \(store.totalSessionCount)")
-                            .font(.headline)
-                            .foregroundColor(.red)
+                        Divider()
+                        HStack{
+                            Text("Total")
+                            Spacer()
+                            Text("\(store.totalSessionCount)")
+                        }
                     }
                     .padding()
                 })
