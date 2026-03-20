@@ -16,7 +16,7 @@ struct ContentView: View {
             Form {
 
                 Section(
-                    header: Text("Settings"),
+                    header: Text("SETTINGS"),
                     content: {
                         VStack {
                             Picker("Session Duration", selection: Binding(
@@ -32,7 +32,7 @@ struct ContentView: View {
                     })
 
                 Section(
-                    header: Text("Statistics"),
+                    header: Text("STATISTICS"),
                     content: {
                         VStack(alignment: .leading) {
                             HStack{
