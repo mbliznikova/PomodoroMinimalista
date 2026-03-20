@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Mixpanel
 
 struct ContentView: View {
     @ObservedObject var store: AppDataStore
@@ -21,7 +22,17 @@ struct ContentView: View {
                         VStack {
                             Picker("Session Duration", selection: Binding(
                                 get: { store.sessionMinutes },
-                                set: { store.updateSessionMinutes($0) }
+                                set: {
+                                    store.updateSessionMinutes($0)
+                                    Mixpanel.mainInstance().track(
+                                        event: "Settings",
+                                        properties: [
+                                            "Device": "Phone",
+                                            "Setting type": "Session duration",
+                                            "Setting value": "\($0)",
+                                        ])
+                                    Mixpanel.mainInstance().flush()
+                                }
                             )) {
                                 ForEach(1...60, id: \.self) { number in
                                     Text("\(Int(number))")

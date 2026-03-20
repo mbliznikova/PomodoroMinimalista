@@ -145,7 +145,11 @@ class TimerController: ObservableObject {
                         WKInterfaceDevice.current().play(.notification) // To be consistent with system alert (default for UNMutableNotificationContent)
                     }
 
-                    Mixpanel.mainInstance().track(event: "Stop timer")
+                    Mixpanel.mainInstance().track(
+                        event: "Stop timer",
+                        properties: [
+                            "Device": "Watch",
+                        ])
                     Mixpanel.mainInstance().flush()
                     self.incrementSessionsCounts()
                     self.resetTimer()

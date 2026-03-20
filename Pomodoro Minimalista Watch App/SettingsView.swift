@@ -36,7 +36,14 @@ struct SettingsView: View {
                 .onChange(of: crownValue) {
                     let minutes = Int(crownValue)
                     timerController.updateSessionMinutes(minutes)
-                    Mixpanel.mainInstance().track(event: "Change session duration")
+                    Mixpanel.mainInstance().track(
+                        event: "Settings",
+                        properties: [
+                            "Device": "Watch",
+                            "Setting type": "Session duration",
+                            "Setting value": "\(minutes)",
+                        ])
+                    Mixpanel.mainInstance().flush()
                 }
                 .onAppear() {
                     crownValue = Double(timerController.sessionMinutes)

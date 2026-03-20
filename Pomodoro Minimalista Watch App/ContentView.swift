@@ -41,9 +41,14 @@ struct ContentView: View {
                                 .font(.system(size: min(circleSize * 0.2, 40)))
                         } else {
                             Button("", systemImage: "play.fill" ) {
-                                Mixpanel.mainInstance().track(event: "Start timer")
                                 timerController.toggleTimer()
                                 WKInterfaceDevice.current().play(.start)
+                                Mixpanel.mainInstance().track(
+                                    event: "Start timer",
+                                    properties: [
+                                        "Device": "Watch",
+                                    ])
+                                Mixpanel.mainInstance().flush()
                             }
                             .buttonStyle(PlainButtonStyle())
                             .font(.system(size: min(circleSize * 0.4, 60)))
