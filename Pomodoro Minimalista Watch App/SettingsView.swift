@@ -35,6 +35,7 @@ struct SettingsView: View {
                 .disabled(timerController.isRunning)
                 .onChange(of: crownValue) {
                     let minutes = Int(crownValue)
+                    guard minutes != timerController.sessionMinutes else { return }
                     timerController.updateSessionMinutes(minutes)
                     Mixpanel.mainInstance().track(
                         event: "Settings",
@@ -51,6 +52,9 @@ struct SettingsView: View {
             Text("minutes")
                 .foregroundColor(.red)
                 .font(.headline)
+        }
+        .onChange(of: timerController.sessionMinutes) { _, newVal in
+            crownValue = Double(newVal)
         }
         ._statusBarHidden()
     }

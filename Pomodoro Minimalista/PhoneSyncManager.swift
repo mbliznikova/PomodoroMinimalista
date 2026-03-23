@@ -70,12 +70,14 @@ class PhoneSyncManager: NSObject, WCSessionDelegate {
     func sessionDidDeactivate(_ session: WCSession) { WCSession.default.activate() }
 
     func session(_ session: WCSession, didReceiveApplicationContext context: [String: Any]) {
-        for (key, value) in context {
-            if let v = value as? Int {
-                UserDefaults.standard.set(v, forKey: key)
-                kvStore.set(v, forKey: key)
+        Task { @MainActor in
+            for (key, value) in context {
+                if let v = value as? Int {
+                    UserDefaults.standard.set(v, forKey: key)
+                    kvStore.set(v, forKey: key)
+                }
             }
+            self.onReceive?(context)
         }
-        Task { @MainActor in self.onReceive?(context) }
     }
 }

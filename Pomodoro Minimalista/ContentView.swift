@@ -10,6 +10,7 @@ import Mixpanel
 
 struct ContentView: View {
     @ObservedObject var store: AppDataStore
+    @State private var selectedMinutes: Int = 25
 
     var body: some View {
         NavigationStack(root: {
@@ -20,25 +21,24 @@ struct ContentView: View {
                     header: Text("SETTINGS"),
                     content: {
                         VStack {
-                            Picker("Session Duration", selection: Binding(
-                                get: { store.sessionMinutes },
-                                set: {
-                                    store.updateSessionMinutes($0)
-                                    Mixpanel.mainInstance().track(
-                                        event: "Settings",
-                                        properties: [
-                                            "Device": "Phone",
-                                            "Setting type": "Session duration",
-                                            "Setting value": "\($0)",
-                                        ])
-                                    Mixpanel.mainInstance().flush()
-                                }
-                            )) {
+                            Picker("Session Duration", selection: $selectedMinutes) {
                                 ForEach(1...60, id: \.self) { number in
                                     Text("\(Int(number))")
                                 }
                             }
                             .pickerStyle(.wheel)
+                            .onChange(of: selectedMinutes) { _, newVal in
+                                guard newVal != store.sessionMinutes else { return }
+                                store.updateSessionMinutes(newVal)
+                                Mixpanel.mainInstance().track(
+                                    event: "Settings",
+                                    properties: [
+                                        "Device": "Phone",
+                                        "Setting type": "Session duration",
+                                        "Setting value": "\(newVal)",
+                                    ])
+                                Mixpanel.mainInstance().flush()
+                            }
                         }
                     })
 
@@ -65,6 +65,10 @@ struct ContentView: View {
             }
             .navigationTitle("Session")
             .padding()
+            .onAppear { selectedMinutes = store.sessionMinutes }
+            .onChange(of: store.sessionMinutes) { _, newVal in
+                selectedMinutes = newVal
+            }
 
         })
     }
