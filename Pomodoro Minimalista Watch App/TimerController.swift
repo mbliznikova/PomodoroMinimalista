@@ -54,10 +54,10 @@ class TimerController: ObservableObject {
             self.dailySessionCount = 1
         }
 
+        self.lastRecordedDate = Date()
         UserDefaults.standard.set(self.dailySessionCount, forKey: "dailySessionsCount")
         UserDefaults.standard.set(self.lastRecordedDate, forKey: "lastRecordedDate")
-        self.lastRecordedDate = Date()
-        syncManager.send(["sessionsCount": totalSessionCount, "dailySessionsCount": dailySessionCount])
+        syncManager.send(["sessionsCount": totalSessionCount, "dailySessionsCount": dailySessionCount, "lastRecordedDate": self.lastRecordedDate!])
     }
 
     var elapsedTime: TimeInterval {
@@ -183,7 +183,7 @@ class TimerController: ObservableObject {
                 self.totalSessionCount = v
                 UserDefaults.standard.set(v, forKey: "sessionsCount")
             }
-            if let v = context["dailySessionsCount"] as? Int, v > 0 {
+            if let v = context["dailySessionsCount"] as? Int, v > 0, self.isToday(self.lastRecordedDate) {
                 self.dailySessionCount = v
                 UserDefaults.standard.set(v, forKey: "dailySessionsCount")
             }

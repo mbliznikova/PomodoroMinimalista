@@ -26,7 +26,9 @@ class AppDataStore: ObservableObject {
                 self.totalSessionCount = v
                 UserDefaults.standard.set(v, forKey: "sessionsCount")
             }
-            if let v = context["dailySessionsCount"] as? Int, v > 0 {
+            if let v = context["dailySessionsCount"] as? Int, v > 0,
+               let date = context["lastRecordedDate"] as? Date,
+               Calendar.current.isDateInToday(date) {
                 self.dailySessionCount = v
                 UserDefaults.standard.set(v, forKey: "dailySessionsCount")
             }
