@@ -26,11 +26,13 @@ class AppDataStore: ObservableObject {
                 self.totalSessionCount = v
                 UserDefaults.standard.set(v, forKey: "sessionsCount")
             }
-            if let v = context["dailySessionsCount"] as? Int, v > 0,
-               let date = context["lastRecordedDate"] as? Date,
-               Calendar.current.isDateInToday(date) {
-                self.dailySessionCount = v
-                UserDefaults.standard.set(v, forKey: "dailySessionsCount")
+            if let v = context["dailySessionsCount"] as? Int, v > 0 {
+                let kvTs = NSUbiquitousKeyValueStore.default.double(forKey: "lastRecordedDate")
+                let ts = kvTs > 0 ? kvTs : UserDefaults.standard.double(forKey: "lastRecordedDate")
+                if ts > 0, Calendar.current.isDateInToday(Date(timeIntervalSince1970: ts)) {
+                    self.dailySessionCount = v
+                    UserDefaults.standard.set(v, forKey: "dailySessionsCount")
+                }
             }
         }
         syncManager.activate()

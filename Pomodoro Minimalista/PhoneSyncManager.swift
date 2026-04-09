@@ -72,7 +72,12 @@ class PhoneSyncManager: NSObject, WCSessionDelegate {
     func session(_ session: WCSession, didReceiveApplicationContext context: [String: Any]) {
         Task { @MainActor in
             for (key, value) in context {
-                if let v = value as? Int {
+                if key == "lastRecordedDate" {
+                    if let ts = (value as? NSNumber)?.doubleValue, ts > 0 {
+                        kvStore.set(ts, forKey: key)
+                        UserDefaults.standard.set(ts, forKey: key)
+                    }
+                } else if let v = value as? Int {
                     UserDefaults.standard.set(v, forKey: key)
                     kvStore.set(v, forKey: key)
                 }

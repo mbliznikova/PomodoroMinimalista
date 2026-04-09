@@ -54,10 +54,15 @@ class TimerController: ObservableObject {
             self.dailySessionCount = 1
         }
 
-        self.lastRecordedDate = Date()
+        let now = Date()
+        self.lastRecordedDate = now
         UserDefaults.standard.set(self.dailySessionCount, forKey: "dailySessionsCount")
-        UserDefaults.standard.set(self.lastRecordedDate, forKey: "lastRecordedDate")
-        syncManager.send(["sessionsCount": totalSessionCount, "dailySessionsCount": dailySessionCount, "lastRecordedDate": self.lastRecordedDate!])
+        UserDefaults.standard.set(now, forKey: "lastRecordedDate")
+        syncManager.send([
+            "sessionsCount": totalSessionCount,
+            "dailySessionsCount": dailySessionCount,
+            "lastRecordedDate": now.timeIntervalSince1970
+        ])
     }
 
     var elapsedTime: TimeInterval {
