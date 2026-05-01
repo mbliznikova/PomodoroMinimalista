@@ -37,3 +37,16 @@ A timer designed to get out of your way:
 - Session statistics
 
 Sync across devices
+
+## Tech Stack
+**Core:**
+- Swift & SwiftUI
+
+**Sync & Persistence:**
+- WatchConnectivity (Watch ↔ iPhone sync)
+- iCloud Key-Value Store (cross-device persistence)
+- UserDefaults (local storage)
+
+**Other:**
+- UserNotifications (background alerts)
+- Mixpanel (event analytics)
