@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-import Mixpanel
-
-
 struct StatsView: View {
     @ObservedObject var timerController: TimerController
 
