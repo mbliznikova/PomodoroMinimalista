@@ -39,8 +39,10 @@ A timer designed to get out of your way:
 Sync across devices
 
 ## Screenshots
-<img width="1290" height="2796" alt="English  en  | iPhone - 6 9  Display - 3" src="https://github.com/user-attachments/assets/9b812356-648e-42f2-b3b2-423d1ed4d3fa" />
-<img width="1290" height="2796" alt="English  en  | iPhone - 6 9  Display - 2" src="https://github.com/user-attachments/assets/78eaa3ae-ec92-4009-af37-3ff29db4e59f" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/78eaa3ae-ec92-4009-af37-3ff29db4e59f" width="250" style="margin-right: 20px;" />
+  <img src="https://github.com/user-attachments/assets/9b812356-648e-42f2-b3b2-423d1ed4d3fa" width="250" />
+</p>
 
 
 ## Tech Stack
