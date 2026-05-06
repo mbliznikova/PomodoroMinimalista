@@ -1,4 +1,4 @@
-# <img src="assets/Pomodoro.png" width="40" style="vertical-align: middle;"> Pomodoro Minimalista
+# <img src="assets/Pomodoro.png" width="40" style="vertical-align: -6px;"> Pomodoro Minimalista
 
 A distraction-free Pomodoro timer — for people who procrastinate on their productivity apps.
 
