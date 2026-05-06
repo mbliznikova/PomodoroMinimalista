@@ -1,4 +1,4 @@
-# ![App Icon](https://raw.githubusercontent.com/mbliznikova/PomodoroMinimalista/main/assets/app-icon.png) Pomodoro Minimalista
+# ![App Icon](assets/Pomodoro.png) Pomodoro Minimalista
 
 A distraction-free Pomodoro timer — for people who procrastinate on their productivity apps.
 
